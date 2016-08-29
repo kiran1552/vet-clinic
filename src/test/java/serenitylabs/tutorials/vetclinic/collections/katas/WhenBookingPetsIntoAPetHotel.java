@@ -1,8 +1,9 @@
 package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import org.junit.Test;
+import serenitylabs.tutorials.vetclinic.Pet;
 
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class WhenBookingPetsIntoAPetHotel {
@@ -19,6 +20,15 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_check_a_pet_into_the_hotel() throws Exception {
+
+        Pet fido= Pet.dog().named("Fido");
+       // Pet felix=Pet.cat().named("Felix");
+
+        PetHotel hotel=new PetHotel();
+        hotel.checkIn(fido);
+
+       assertThat(hotel.getPets(),hasItem(fido));
+
     }
 
     @Test

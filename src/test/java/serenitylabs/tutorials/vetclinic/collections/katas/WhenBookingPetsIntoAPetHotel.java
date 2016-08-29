@@ -2,11 +2,19 @@ package serenitylabs.tutorials.vetclinic.collections.katas;
 
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.hasSize;
+import static org.junit.Assert.assertThat;
+
 public class WhenBookingPetsIntoAPetHotel {
 
 
     @Test
     public void the_hotel_should_initially_have_no_pets_booked() {
+        PetHotel hotel= new PetHotel();
+
+        assertThat(hotel.getPets(), hasSize(0));
+
+
     }
 
     @Test

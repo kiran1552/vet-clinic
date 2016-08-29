@@ -18,9 +18,12 @@ public class PetHotel {
         return new ArrayList<>(pets);
     }
 
-    public Collection<Pet> checkIn(Pet somePet) {
-        pets.add(somePet);
+    public Collection<Pet> checkIn(Pet... somePets) {
+        pets.addAll(Arrays.asList(somePets));
+       // pets.add(somePet);
         return pets;
       //  return getPets();
     }
+
+
 }

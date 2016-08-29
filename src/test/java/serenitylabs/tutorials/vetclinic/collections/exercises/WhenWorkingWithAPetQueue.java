@@ -6,6 +6,11 @@ import serenitylabs.tutorials.vetclinic.Pet;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
+
+
 public class WhenWorkingWithAPetQueue {
 
     @Test
@@ -16,6 +21,8 @@ public class WhenWorkingWithAPetQueue {
         waitingList.add(Pet.dog().named("Fido"));
 
         // TODO
+        Pet nextInLine = waitingList.poll();
+       assertThat(nextInLine.getName(),equalTo("Felix"));
     }
 
     @Test
@@ -26,6 +33,11 @@ public class WhenWorkingWithAPetQueue {
         waitingList.add(Pet.dog().named("Fido"));
 
         // TODO
+        Pet nextInLine = waitingList.peek();
+
+        assertThat(nextInLine.getName(), equalTo("Felix"));
+
+
     }
 
 

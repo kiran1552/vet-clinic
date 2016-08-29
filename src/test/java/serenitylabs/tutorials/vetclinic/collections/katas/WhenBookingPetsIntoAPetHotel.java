@@ -39,11 +39,22 @@ public class WhenBookingPetsIntoAPetHotel {
         PetHotel hotel=new PetHotel();
         hotel.checkIn(fido,felix);
 
-        assertThat(hotel.getPets(),containsInAnyOrder(fido,felix));
+        assertThat(hotel.getPets(),hasItems(fido,felix));
+
     }
 
     @Test
     public void should_not_be_able_to_check_in_the_same_pet_twice() throws Exception {
+
+        Pet fido= Pet.dog().named("Fido");
+        Pet felix=Pet.cat().named("Felix");
+
+        PetHotel hotel=new PetHotel();
+        hotel.checkIn(fido,felix);
+        hotel.checkIn(fido);
+
+        assertThat(hotel.getPets(),containsInAnyOrder(fido,felix));
+
     }
 
     @Test

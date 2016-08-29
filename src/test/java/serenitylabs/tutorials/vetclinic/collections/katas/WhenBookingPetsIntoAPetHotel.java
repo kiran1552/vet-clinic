@@ -33,6 +33,13 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_check_in_several_pets() throws Exception {
+        Pet fido= Pet.dog().named("Fido");
+        Pet felix=Pet.cat().named("Felix");
+
+        PetHotel hotel=new PetHotel();
+        hotel.checkIn(fido,felix);
+
+        assertThat(hotel.getPets(),containsInAnyOrder(fido,felix));
     }
 
     @Test

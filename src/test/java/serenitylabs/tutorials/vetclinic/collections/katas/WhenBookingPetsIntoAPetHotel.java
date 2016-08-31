@@ -59,14 +59,26 @@ public class WhenBookingPetsIntoAPetHotel {
 
     @Test
     public void should_be_able_to_retrieve_checked_in_pets_in_alphabetical_order() throws Exception {
+
     }
 
     @Test
     public void should_be_able_to_obtain_a_booking_confirmation_when_we_check_in_a_pet() throws Exception {
+
+
+
+
+
     }
 
     @Test
     public void should_not_be_able_to_check_in_pets_beyond_hotel_capacity() throws Exception {
+        PetHotel hotel=APetHotel.with(PetHotel.MAXIMUM_CAPACITY).petsCheckedIn();
+        Pet fido=Pet.dog().named("Fido");
+
+        hotel.checkIn(fido);
+
+        assertThat(hotel.getPets(), hasSize(20));
     }
 
     @Test

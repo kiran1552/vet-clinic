@@ -11,6 +11,7 @@ import static java.util.Comparator.comparing;
  */
 public class PetHotel {
 
+    public static int MAXIMUM_CAPACITY=20;
     private Collection<Pet> pets = new TreeSet<>(comparing(Pet::getName));
 
     public Collection<Pet> getPets() {
